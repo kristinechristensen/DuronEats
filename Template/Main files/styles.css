@@ -1,0 +1,120 @@
+@import url('fonts.googleapis.com');
+
+:root { 
+    --bg-primary: #0a0a0a; 
+    --bg-secondary: #000080; 
+    --text-color: #ffffff; 
+    --text-secondary: #aaaaaa; 
+    --accent-color: #007BFF; 
+    --card-bg: #1c1c1c; 
+    --nav-hover: #333333; 
+} 
+
+body { 
+    font-family: 'Roboto', sans-serif; 
+    line-height: 1.6; 
+    margin: 0; 
+    padding: 0; 
+    background-color: var(--bg-primary); 
+    color: var(--text-color); 
+} 
+
+.container { 
+    max-width: 900px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
+} 
+
+header { 
+    background-color: var(--bg-secondary); /* Navy blue header */ 
+    color: var(--text-color); 
+    padding: 1rem 0; 
+    text-align: center; 
+} 
+
+/* --- Navigation Bar Styling --- */ 
+nav { 
+    background-color: var(--bg-primary); /* Black navigation bar */ 
+    color: var(--text-color); 
+    padding: 0.5rem 0; 
+} 
+
+nav ul { 
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0; 
+    display: flex; 
+    justify-content: center; 
+    flex-wrap: wrap; 
+} 
+
+nav ul li a { 
+    color: var(--text-color); 
+    text-decoration: none; 
+    padding: 0.5rem 1rem; 
+    display: block; 
+    transition: background-color 0.3s; 
+} 
+
+/* Style for non-current links on hover */ 
+nav ul li a:hover:not([aria-current="page"]), 
+nav ul li a:focus {  
+    background-color: var(--nav-hover); 
+    outline: 2px solid var(--accent-color); 
+    outline-offset: -2px; 
+} 
+
+/* Style for the link of the current page */ 
+nav ul li a[aria-current="page"] { 
+    background-color: var(--accent-color); /* Highlight color */ 
+    font-weight: bold; 
+} 
+
+/* --- Main Content Styling --- */ 
+main { 
+    padding-top: 20px; 
+    padding-bottom: 20px; 
+    min-height: 60vh; 
+} 
+
+section { 
+    background: var(--card-bg); /* Lighter black for content cards */ 
+    margin-bottom: 20px; 
+    padding: 20px; 
+    border-radius: 5px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);  
+} 
+
+h2 { 
+    color: var(--accent-color); /* Accent color for headings */ 
+} 
+
+/* --- Footer Styling --- */ 
+footer { 
+    background-color: var(--bg-secondary); /* Navy blue footer */ 
+    color: var(--text-color); 
+    text-align: center; 
+    padding: 1rem 0; 
+    margin-top: 20px; 
+} 
+
+/* --- Mobile Responsiveness (Media Queries) --- */ 
+@media (max-width: 600px) { 
+    .container { 
+        padding: 0 10px; 
+    } 
+    nav ul { 
+        flex-direction: column; 
+        align-items: stretch; 
+    } 
+    nav ul li a { 
+        text-align: center; 
+        padding: 1rem; 
+    } 
+    section { 
+        padding: 15px; 
+    } 
+    header h1 { 
+        font-size: 1.5rem; 
+    } 
+}
